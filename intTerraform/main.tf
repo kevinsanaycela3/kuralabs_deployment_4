@@ -29,7 +29,7 @@ output "instance_ip" {
 # VPC
 resource "aws_vpc" "my-vpc" {
   cidr_block           = "172.33.0.0/16" #tyrones had 19 instead of 33, shouldn't matter tho?
-  enable_dns_hostnames = "true"
+  #enable_dns_hostnames = "true"
  
   tags = {
     "Name" : "deployment4-vpc"
