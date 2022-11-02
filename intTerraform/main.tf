@@ -52,7 +52,7 @@ resource "aws_nat_gateway" "nat_gateway_prob" {
 # SUBNET 1 (PUBLIC)
 resource "aws_subnet" "subnet1" {
   cidr_block              = "172.33.0.0/18"
-  vpc_id                  = aws_vpc.test-vpc.id
+  vpc_id                  = aws_vpc.my-vpc.id
   map_public_ip_on_launch = "true"
   availability_zone       = data.aws_availability_zones.available.names[0]
 }
@@ -60,7 +60,7 @@ resource "aws_subnet" "subnet1" {
 # SUBNET 2 (PRIVATE)
 resource "aws_subnet" "pri_subnet1" {
   cidr_block              = "172.33.128.0/18"
-  vpc_id                  = aws_vpc.test-vpc.id
+  vpc_id                  = aws_vpc.my-vpc.id
   map_public_ip_on_launch = "false"
   availability_zone       = data.aws_availability_zones.available.names[0]
 }
